@@ -2,6 +2,10 @@
 
 A simple employee directory web application built with HTML, CSS, and JavaScript for the AJACKUS Company assignment.
 
+## Live Demo
+
+**🌐 [View Live Demo](https://employee-directory35.netlify.app/)**
+
 ## Features
 
 - Display list of employees with their details
@@ -32,6 +36,8 @@ Employee Directory/
 1. Download all the files
 2. Open `index.html` in a web browser
 3. The application will load with sample employee data
+
+**Or visit the live demo: [https://employee-directory35.netlify.app/](https://employee-directory35.netlify.app/)**
 
 ## Employee Information
 
@@ -132,4 +138,6 @@ Works in:
 - Add more validation rules
 - Add bulk operations
 
-This project demonstrates basic front-end development skills with HTML, CSS, and JavaScript. #
+This project demonstrates basic front-end development skills with HTML, CSS, and JavaScript.
+
+**🔗 [Live Demo](https://employee-directory35.netlify.app/)**
