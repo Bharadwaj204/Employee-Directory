@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Dashboard Page -->
+        <div id="dashboard-page">
+            <header>
+                <h1>Employee Directory</h1>
+                <button id="add-employee-btn">Add Employee</button>
+            </header>
+            
+            <!-- Search and Controls -->
+            <div class="controls">
+                <div class="search-section">
+                    <input type="text" id="search-input" placeholder="Search by name or email...">
+                </div>
+                
+                <div class="filter-section">
+                    <button id="filter-btn">Filter</button>
+                    <select id="sort-select">
+                        <option value="">Sort by...</option>
+                        <option value="firstName">First Name</option>
+                        <option value="department">Department</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Filter Popup -->
+            <div id="filter-popup" class="filter-popup">
+                <div class="filter-content">
+                    <h3>Filter Employees</h3>
+                    <div class="filter-form">
+                        <div>
+                            <label>First Name:</label>
+                            <input type="text" id="filter-firstName">
+                        </div>
+                        <div>
+                            <label>Department:</label>
+                            <select id="filter-department">
+                                <option value="">All Departments</option>
+                                <option value="HR">HR</option>
+                                <option value="IT">IT</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Sales">Sales</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Role:</label>
+                            <select id="filter-role">
+                                <option value="">All Roles</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Developer">Developer</option>
+                                <option value="Analyst">Analyst</option>
+                                <option value="Coordinator">Coordinator</option>
+                                <option value="Specialist">Specialist</option>
+                            </select>
+                        </div>
+                        <div class="filter-actions">
+                            <button id="apply-filter">Apply Filter</button>
+                            <button id="clear-filter">Clear All</button>
+                            <button id="close-filter">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Employee List -->
+            <div id="employee-list" class="employee-list">
+                <!-- Employee cards will be added here via Freemarker/JavaScript -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <div class="pagination-info">
+                    <span id="pagination-info">Showing 1-10 of 0 employees</span>
+                    <select id="items-per-page">
+                        <option value="10">10 per page</option>
+                        <option value="25">25 per page</option>
+                        <option value="50">50 per page</option>
+                        <option value="100">100 per page</option>
+                    </select>
+                </div>
+                <div class="pagination-controls">
+                    <button id="prev-page" disabled>Previous</button>
+                    <div id="page-numbers"></div>
+                    <button id="next-page" disabled>Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add/Edit Form Page -->
+        <div id="form-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="form-title">Add Employee</h2>
+                    <button id="close-form">×</button>
+                </div>
+
+                <form id="employee-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                            <span class="error" id="firstName-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                            <span class="error" id="lastName-error"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error" id="email-error"></span>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="department">Department *</label>
+                            <select id="department" name="department" required>
+                                <option value="">Select Department</option>
+                                <option value="HR">HR</option>
+                                <option value="IT">IT</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Sales">Sales</option>
+                            </select>
+                            <span class="error" id="department-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role *</label>
+                            <select id="role" name="role" required>
+                                <option value="">Select Role</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Developer">Developer</option>
+                                <option value="Analyst">Analyst</option>
+                                <option value="Coordinator">Coordinator</option>
+                                <option value="Specialist">Specialist</option>
+                            </select>
+                            <span class="error" id="role-error"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" id="cancel-btn">Cancel</button>
+                        <button type="submit">Save Employee</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Delete Confirmation Modal -->
+        <div id="delete-modal" class="modal">
+            <div class="modal-content">
+                <h3>Confirm Delete</h3>
+                <p id="delete-message">Are you sure you want to delete this employee?</p>
+                <div class="modal-actions">
+                    <button id="confirm-delete">Delete</button>
+                    <button id="cancel-delete">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 
